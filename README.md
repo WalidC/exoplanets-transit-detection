@@ -6,6 +6,7 @@ The program relies on two important libraries :
 
 * [Astropy] - Python Library for Astronomy applications
 * [Matplotlib] - A plotting library
+
 ### How to run
 ```
 python FITSpitzer.py /filepath/inputfile.fits
@@ -18,7 +19,7 @@ You can select the dataset of your choice from the [IPAC (Infrared Processing an
 ### Future improvements
   - Include PDF generation of the light-curves
   - Work on the GUI
-  - Implement automatic FITS files download from the IRSA (InfraRed Science Archive) https://irsa.ipac.caltech.edu/frontpage/
+  - Implement automatic FITS files download from the [IRSA (InfraRed Science Archive)](https://irsa.ipac.caltech.edu/frontpage/)
 
 
 ### Version
