@@ -54,7 +54,7 @@ brightestPixel(imageData, coordinatesList)
 valuesList = []
 generateValuesList(imageData, coordinatesList, valuesList)
 timeList = []
-generateTimeList(timeList)
+generateTimeList(imageData, timeList)
 print timeList
 print "\n"
 print valuesList
