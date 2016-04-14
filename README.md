@@ -9,7 +9,7 @@ The program relies on two important libraries :
 
 ### How to run
 ```
-python FITSpitzer.py /filepath/inputfile.fits
+python FITSpitzer.py /directory/inputfile.fits /directory/output.pdf
 ```
 
 ### Where to get FITS images
