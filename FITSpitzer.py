@@ -37,8 +37,9 @@ def generateValuesList(imageData, coordinatesList, valuesList):
 		valuesList.append(imageData[i, coordinatesList[0], coordinatesList[1]]) #we are assuming that is it a square image (i.e xBound = yBound)
 	return valuesList
 
-def generateTimeList(timeList):
-	for m in range(64):
+def generateTimeList(imageData, timeList):
+	timeBound = imageData.shape[0]
+	for m in range(timeBound):
 		timeList.append(m)
 	return timeList	
 
