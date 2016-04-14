@@ -1,11 +1,17 @@
 from astropy.io import fits #using the fits I/O class of Astropy
+import matplotlib
+matplotlib.use('PDF') #you can change PDF by whatever format allowed by the matplotlib 
+#Agg (for PNGs), PDF, SVG or PS
 import matplotlib.pyplot as plt  #for plotting the graph
+
 import sys #for exceptions handling
 
 try:
 	inputFITS = sys.argv[1]
 	image = fits.open(inputFITS)
 	imageData = image[0].data
+	targetName = image[0].header['OBJECT'] #Getting the target name
+	output = sys.argv[2]
 except :
 	sys.exit("Wrong input")
 
@@ -47,7 +53,8 @@ def plotCreation(valuesList, timeList):
 	plt.plot(timeList, valuesList)
 	plt.ylabel('Differential magnitude')
 	plt.xlabel('Time')
-	plt.show()
+	plt.title('Raw light curve for ' + targetName) #Displaying the title of the graph and the target
+	plt.savefig(output) #Saving the plot
 
 coordinatesList = []
 brightestPixel(imageData, coordinatesList)
@@ -55,9 +62,16 @@ valuesList = []
 generateValuesList(imageData, coordinatesList, valuesList)
 timeList = []
 generateTimeList(imageData, timeList)
+'''
+print "Plotting time..."
 print timeList
 print "\n"
+print "Plotting magnitude..."
 print valuesList
 print "\n"
+print "Brightest pixel coordinates : "
 print coordinatesList
 plotCreation(valuesList, timeList)
+print "\n"
+'''
+print "Light curve saved as " + sys.argv[2]
